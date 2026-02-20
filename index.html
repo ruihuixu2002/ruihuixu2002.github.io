@@ -19,6 +19,7 @@
 
     h1{font-size:34px;margin:0 0 6px;letter-spacing:-.02em}
     h2{font-size:13px;letter-spacing:.10em;text-transform:uppercase;margin:28px 0 10px}
+    h2.zh{letter-spacing:0;text-transform:none}
 
     .muted{color:#555}
     .top{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
@@ -29,15 +30,8 @@
     .row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     .block{margin-top:6px}
 
-    /* Language switcher */
-    .langbar{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      flex-wrap:wrap;
-      margin-bottom:10px;
-    }
+    /* language buttons */
+    .langbar{display:flex;justify-content:flex-end;margin-bottom:10px}
     .langbtns{display:flex;gap:8px}
     .btn{
       border:1px solid #e5e7eb;
@@ -48,10 +42,7 @@
       border-radius:10px;
       cursor:pointer;
     }
-    .btn[aria-pressed="true"]{
-      border-color:#111;
-      font-weight:600;
-    }
+    .btn[aria-pressed="true"]{border-color:#111;font-weight:600}
 
     /* Show/Hide by language */
     html[data-lang="en"] .zh { display:none; }
@@ -62,9 +53,8 @@
 <body>
   <main>
     <div class="langbar">
-   
       <div class="langbtns" role="group" aria-label="Language switch">
-        <button class="btn" id="btn-en" type="button" aria-pressed="true">EN</button>
+        <button class="btn" id="btn-en" type="button" aria-pressed="true">英文</button>
         <button class="btn" id="btn-zh" type="button" aria-pressed="false">中文</button>
       </div>
     </div>
@@ -74,14 +64,17 @@
         <h1>Ruihui Xu</h1>
 
         <div class="links">
-          <a href="mailto:rxu367@gatech.edu">rxu367@gatech.edu</a>
-          <a href="https://github.com/ruihuixu2002" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="en" href="mailto:rxu367@gatech.edu">Email</a>
+          <a class="zh" href="mailto:rxu367@gatech.edu">邮箱</a>
+
+          <a class="en" href="https://github.com/ruihuixu2002" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="zh" href="https://github.com/ruihuixu2002" target="_blank" rel="noreferrer">代码</a>
         </div>
       </div>
 
       <div class="muted">
-        <span class="en">Atlanta, GA</span>
-        <span class="zh">亚特兰大，佐治亚州</span>
+        <span class="en">Atlanta, GA, USA</span>
+        <span class="zh">美国 · 佐治亚州 · 亚特兰大</span>
         <br/>
         <span class="en">English · Chinese</span>
         <span class="zh">英语 · 中文</span>
@@ -94,45 +87,59 @@
       <h2 class="en">Education</h2>
       <h2 class="zh">教育经历</h2>
 
-      <div class="row">
-        <strong class="en">Georgia Institute of Technology, School of Mathematics</strong>
-        <strong class="zh">佐治亚理工学院（Georgia Tech），数学学院</strong>
-        <span class="muted en">Atlanta, GA</span>
-        <span class="muted zh">亚特兰大，佐治亚州</span>
+      <div class="en">
+        <div class="row">
+          <strong>Georgia Institute of Technology, School of Mathematics</strong>
+          <span class="muted">Atlanta, GA</span>
+        </div>
+        <div class="row block">
+          <span>M.S. in Mathematics</span>
+          <span class="muted">Aug 2023 – Aug 2025</span>
+        </div>
+
+        <div style="height:12px"></div>
+
+        <div class="row">
+          <strong>Florida State University, College of Arts and Sciences</strong>
+          <span class="muted">Tallahassee, FL</span>
+        </div>
+        <div class="row block">
+          <span>B.S. in Actuarial Science</span>
+          <span class="muted">Aug 2021 – Aug 2023</span>
+        </div>
+        <div class="row block">
+          <span>B.S. in Mathematics</span>
+          <span class="muted">Aug 2021 – Aug 2023</span>
+        </div>
+        <div class="muted block">Honors: Summa Cum Laude, Liberal Studies Honors Program · GPA: 4.0</div>
       </div>
 
-      <div class="row block">
-        <span class="en">M.S. in Mathematics</span>
-        <span class="zh">数学硕士</span>
-        <span class="muted en">Aug 2023 – Aug 2025</span>
-        <span class="muted zh">2023.08 – 2025.08</span>
+      <div class="zh">
+        <div class="row">
+          <strong>佐治亚理工学院 · 数学学院</strong>
+          <span class="muted">亚特兰大，佐治亚州</span>
+        </div>
+        <div class="row block">
+          <span>数学硕士</span>
+          <span class="muted">2023.08 – 2025.08</span>
+        </div>
+
+        <div style="height:12px"></div>
+
+        <div class="row">
+          <strong>佛罗里达州立大学 · 文理学院</strong>
+          <span class="muted">塔拉哈西，佛罗里达州</span>
+        </div>
+        <div class="row block">
+          <span>精算学 学士</span>
+          <span class="muted">2021.08 – 2023.08</span>
+        </div>
+        <div class="row block">
+          <span>数学 学士</span>
+          <span class="muted">2021.08 – 2023.08</span>
+        </div>
+        <div class="muted block">荣誉：最优等（Summa Cum Laude），荣誉项目 · GPA：4.0</div>
       </div>
-
-      <div style="height:12px"></div>
-
-      <div class="row">
-        <strong class="en">Florida State University, College of Arts and Sciences</strong>
-        <strong class="zh">佛罗里达州立大学，文理学院</strong>
-        <span class="muted en">Tallahassee, FL</span>
-        <span class="muted zh">塔拉哈西，佛罗里达州</span>
-      </div>
-
-      <div class="row block">
-        <span class="en">B.S. in Actuarial Science</span>
-        <span class="zh">精算学 学士</span>
-        <span class="muted en">Aug 2021 – Aug 2023</span>
-        <span class="muted zh">2021.08 – 2023.08</span>
-      </div>
-
-      <div class="row block">
-        <span class="en">B.S. in Mathematics</span>
-        <span class="zh">数学 学士</span>
-        <span class="muted en">Aug 2021 – Aug 2023</span>
-        <span class="muted zh">2021.08 – 2023.08</span>
-      </div>
-
-      <div class="muted block en">Honors: Summa Cum Laude, Liberal Studies Honors Program · GPA: 4.0</div>
-      <div class="muted block zh">荣誉：最优等（Summa Cum Laude），荣誉项目（Liberal Studies Honors Program）· GPA：4.0</div>
     </section>
 
     <section>
@@ -140,12 +147,13 @@
       <h2 class="zh">精算考试</h2>
 
       <ul class="en">
-        <li>Exam Financial Mathematics (Passed Jun 2022)</li>
-        <li>Exam Probability (Passed Jul 2022)</li>
+        <li>SOA Exam FM — Passed (Jun 2022)</li>
+        <li>SOA Exam P — Passed (Jul 2022)</li>
       </ul>
+
       <ul class="zh">
-        <li>SOA FM（金融数学）— 通过（2022.06）</li>
-        <li>SOA P（概率）— 通过（2022.07）</li>
+        <li>SOA 考试 FM（金融数学）— 通过（2022.06）</li>
+        <li>SOA 考试 P（概率）— 通过（2022.07）</li>
       </ul>
     </section>
 
@@ -153,33 +161,41 @@
       <h2 class="en">Employment</h2>
       <h2 class="zh">工作经历</h2>
 
-      <div class="row">
-        <strong class="en">Graduate Teaching Assistant, Georgia Tech</strong>
-        <strong class="zh">研究生助教，佐治亚理工学院</strong>
-        <span class="muted en">Atlanta, GA</span>
-        <span class="muted zh">亚特兰大，佐治亚州</span>
+      <div class="en">
+        <div class="row">
+          <strong>Graduate Teaching Assistant, Georgia Tech</strong>
+          <span class="muted">Atlanta, GA</span>
+        </div>
+        <div class="row block">
+          <span>Department of Mathematics</span>
+          <span class="muted">Aug 2023 – Present</span>
+        </div>
       </div>
 
-      <div class="row block">
-        <span class="en">Department of Mathematics</span>
-        <span class="zh">数学系</span>
-        <span class="muted en">Aug 2023 – Present</span>
-        <span class="muted zh">2023.08 – 至今</span>
+      <div class="zh">
+        <div class="row">
+          <strong>研究生助教 · 佐治亚理工学院</strong>
+          <span class="muted">亚特兰大，佐治亚州</span>
+        </div>
+        <div class="row block">
+          <span>数学系</span>
+          <span class="muted">2023.08 – 至今</span>
+        </div>
       </div>
     </section>
 
     <section>
-      <h2 class="en">Technical Skills & Languages</h2>
+      <h2 class="en">Skills & Languages</h2>
       <h2 class="zh">技能与语言</h2>
 
       <ul class="en">
-        <li>Languages: Chinese; English</li>
-        <li>Programming: C++ (beginner), Python (beginner)</li>
-        <li>Computer Skills: Excel</li>
+        <li>Languages: English; Chinese</li>
+        <li>Programming: C++ (basic), Python (basic)</li>
+        <li>Tools: Excel</li>
       </ul>
 
       <ul class="zh">
-        <li>语言：中文；英语</li>
+        <li>语言：英语；中文</li>
         <li>编程：C++（入门），Python（入门）</li>
         <li>工具：Excel</li>
       </ul>
