@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ruihui Xu</title>
-  <meta name="description" content="Ruihui Xu — M.S. Mathematics (Georgia Tech)." />
+  <meta name="description" content="Ruihui Xu — Personal website (EN/中文)." />
   <style>
     body{
       margin:0;
@@ -16,8 +16,10 @@
     main{max-width:860px;margin:56px auto;padding:0 18px}
     a{color:#111;text-decoration:underline}
     a:hover{opacity:.75}
+
     h1{font-size:34px;margin:0 0 6px;letter-spacing:-.02em}
     h2{font-size:13px;letter-spacing:.10em;text-transform:uppercase;margin:28px 0 10px}
+
     .muted{color:#555}
     .top{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
     .links{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
@@ -26,15 +28,52 @@
     li{margin:6px 0}
     .row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     .block{margin-top:6px}
+
+    /* Language switcher */
+    .langbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:10px;
+    }
+    .langbtns{display:flex;gap:8px}
+    .btn{
+      border:1px solid #e5e7eb;
+      background:#fff;
+      color:#111;
+      padding:6px 10px;
+      font:inherit;
+      border-radius:10px;
+      cursor:pointer;
+    }
+    .btn[aria-pressed="true"]{
+      border-color:#111;
+      font-weight:600;
+    }
+
+    /* Show/Hide by language */
+    html[data-lang="en"] .zh { display:none; }
+    html[data-lang="zh"] .en { display:none; }
   </style>
 </head>
 
 <body>
   <main>
+    <div class="langbar">
+      <div class="muted en">Language:</div>
+      <div class="muted zh">语言：</div>
+
+      <div class="langbtns" role="group" aria-label="Language switch">
+        <button class="btn" id="btn-en" type="button" aria-pressed="true">EN</button>
+        <button class="btn" id="btn-zh" type="button" aria-pressed="false">中文</button>
+      </div>
+    </div>
+
     <section class="top">
       <div>
         <h1>Ruihui Xu</h1>
-        <div class="muted">M.S. Mathematics (Georgia Tech) · Graduate Teaching Assistant</div>
 
         <div class="links">
           <a href="mailto:rxu367@gatech.edu">rxu367@gatech.edu</a>
@@ -43,70 +82,146 @@
       </div>
 
       <div class="muted">
-        Atlanta, GA<br/>
-        English · Chinese
+        <span class="en">Atlanta, GA</span>
+        <span class="zh">亚特兰大，佐治亚州</span>
+        <br/>
+        <span class="en">English · Chinese</span>
+        <span class="zh">英语 · 中文</span>
       </div>
     </section>
 
     <hr/>
 
     <section>
-      <h2>Education</h2>
+      <h2 class="en">Education</h2>
+      <h2 class="zh">教育经历</h2>
 
       <div class="row">
-        <strong>Georgia Institute of Technology, School of Mathematics</strong>
-        <span class="muted">Atlanta, GA</span>
+        <strong class="en">Georgia Institute of Technology, School of Mathematics</strong>
+        <strong class="zh">佐治亚理工学院（Georgia Tech），数学学院</strong>
+        <span class="muted en">Atlanta, GA</span>
+        <span class="muted zh">亚特兰大，佐治亚州</span>
       </div>
+
       <div class="row block">
-        <span>M.S. in Mathematics</span>
-        <span class="muted">Aug 2023 – Aug 2025</span>
+        <span class="en">M.S. in Mathematics</span>
+        <span class="zh">数学硕士</span>
+        <span class="muted en">Aug 2023 – Aug 2025</span>
+        <span class="muted zh">2023.08 – 2025.08</span>
       </div>
 
       <div style="height:12px"></div>
 
       <div class="row">
-        <strong>Florida State University, College of Arts and Sciences</strong>
-        <span class="muted">Tallahassee, FL</span>
+        <strong class="en">Florida State University, College of Arts and Sciences</strong>
+        <strong class="zh">佛罗里达州立大学，文理学院</strong>
+        <span class="muted en">Tallahassee, FL</span>
+        <span class="muted zh">塔拉哈西，佛罗里达州</span>
       </div>
+
       <div class="row block">
-        <span>B.S. in Actuarial Science</span>
-        <span class="muted">Aug 2021 – Aug 2023</span>
+        <span class="en">B.S. in Actuarial Science</span>
+        <span class="zh">精算学 学士</span>
+        <span class="muted en">Aug 2021 – Aug 2023</span>
+        <span class="muted zh">2021.08 – 2023.08</span>
       </div>
+
       <div class="row block">
-        <span>B.S. in Mathematics</span>
-        <span class="muted">Aug 2021 – Aug 2023</span>
+        <span class="en">B.S. in Mathematics</span>
+        <span class="zh">数学 学士</span>
+        <span class="muted en">Aug 2021 – Aug 2023</span>
+        <span class="muted zh">2021.08 – 2023.08</span>
       </div>
-      <div class="muted block">Honors: Summa Cum Laude, Liberal Studies Honors Program · GPA: 4.0</div>
+
+      <div class="muted block en">Honors: Summa Cum Laude, Liberal Studies Honors Program · GPA: 4.0</div>
+      <div class="muted block zh">荣誉：最优等（Summa Cum Laude），荣誉项目（Liberal Studies Honors Program）· GPA：4.0</div>
     </section>
 
     <section>
-      <h2>Actuarial Exams</h2>
-      <ul>
+      <h2 class="en">Actuarial Exams</h2>
+      <h2 class="zh">精算考试</h2>
+
+      <ul class="en">
         <li>Exam Financial Mathematics (Passed Jun 2022)</li>
         <li>Exam Probability (Passed Jul 2022)</li>
+      </ul>
+      <ul class="zh">
+        <li>SOA FM（金融数学）— 通过（2022.06）</li>
+        <li>SOA P（概率）— 通过（2022.07）</li>
       </ul>
     </section>
 
     <section>
-      <h2>Employment</h2>
+      <h2 class="en">Employment</h2>
+      <h2 class="zh">工作经历</h2>
+
       <div class="row">
-        <strong>Graduate Teaching Assistant, Georgia Tech</strong>
-        <span class="muted">Atlanta, GA</span>
+        <strong class="en">Graduate Teaching Assistant, Georgia Tech</strong>
+        <strong class="zh">研究生助教，佐治亚理工学院</strong>
+        <span class="muted en">Atlanta, GA</span>
+        <span class="muted zh">亚特兰大，佐治亚州</span>
       </div>
+
       <div class="row block">
-        <span>Department of Mathematics</span>
-        <span class="muted">Aug 2023 – Present</span>
+        <span class="en">Department of Mathematics</span>
+        <span class="zh">数学系</span>
+        <span class="muted en">Aug 2023 – Present</span>
+        <span class="muted zh">2023.08 – 至今</span>
       </div>
     </section>
 
     <section>
-      <h2>Technical Skills & Languages</h2>
-      <ul>
+      <h2 class="en">Technical Skills & Languages</h2>
+      <h2 class="zh">技能与语言</h2>
+
+      <ul class="en">
         <li>Languages: Chinese; English</li>
         <li>Programming: C++ (beginner), Python (beginner)</li>
         <li>Computer Skills: Excel</li>
       </ul>
+
+      <ul class="zh">
+        <li>语言：中文；英语</li>
+        <li>编程：C++（入门），Python（入门）</li>
+        <li>工具：Excel</li>
+      </ul>
     </section>
   </main>
+
+  <script>
+    (function () {
+      const html = document.documentElement;
+      const btnEn = document.getElementById("btn-en");
+      const btnZh = document.getElementById("btn-zh");
+
+      function setPressed(lang) {
+        btnEn.setAttribute("aria-pressed", lang === "en" ? "true" : "false");
+        btnZh.setAttribute("aria-pressed", lang === "zh" ? "true" : "false");
+      }
+
+      function setLang(lang) {
+        const safe = (lang === "zh") ? "zh" : "en";
+        html.setAttribute("data-lang", safe);
+        html.setAttribute("lang", safe === "zh" ? "zh-CN" : "en");
+        setPressed(safe);
+        try { localStorage.setItem("site_lang", safe); } catch (e) {}
+      }
+
+      function detectDefault() {
+        try {
+          const saved = localStorage.getItem("site_lang");
+          if (saved === "en" || saved === "zh") return saved;
+        } catch (e) {}
+
+        const nav = (navigator.language || "").toLowerCase();
+        return nav.startsWith("zh") ? "zh" : "en";
+      }
+
+      btnEn.addEventListener("click", () => setLang("en"));
+      btnZh.addEventListener("click", () => setLang("zh"));
+
+      setLang(detectDefault());
+    })();
+  </script>
 </body>
 </html>
