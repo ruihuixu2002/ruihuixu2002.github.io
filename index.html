@@ -2,147 +2,111 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Ruihui Xu — Personal Website</title>
-  <meta name="description" content="Ruihui Xu — Mathematics graduate student, teaching assistant, actuarial exam passer." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ruihui Xu</title>
+  <meta name="description" content="Ruihui Xu — M.S. Mathematics (Georgia Tech)." />
   <style>
-    :root{
-      --bg:#0b1020;
-      --card:#111a33;
-      --text:#e8ecff;
-      --muted:#b7c0ffcc;
-      --line:#ffffff1a;
-      --link:#9db4ff;
-    }
-    *{box-sizing:border-box}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background: radial-gradient(1200px 600px at 20% 0%, #1a2b66 0%, transparent 60%),
-                  radial-gradient(900px 500px at 80% 10%, #4a1f6e 0%, transparent 55%),
-                  var(--bg);
-      color:var(--text);
-      line-height:1.6;
+      background:#fff;
+      color:#111;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      line-height:1.7;
     }
-    .wrap{max-width:960px;margin:56px auto;padding:0 16px}
-    .top{
-      display:flex; gap:18px; align-items:flex-start; justify-content:space-between; flex-wrap:wrap;
-      padding:22px; border:1px solid var(--line); border-radius:18px; background:rgba(17,26,51,.75); backdrop-filter: blur(8px);
-    }
-    h1{font-size:34px;margin:0 0 6px}
-    .tagline{color:var(--muted); margin:0 0 10px}
-    .links{display:flex; flex-wrap:wrap; gap:10px; margin-top:8px}
-    .chip{
-      display:inline-block; padding:8px 12px; border:1px solid var(--line); border-radius:999px;
-      text-decoration:none; color:var(--text); background:rgba(255,255,255,.04)
-    }
-    .chip:hover{border-color:#ffffff33}
-    .grid{display:grid; grid-template-columns: 1.2fr .8fr; gap:16px; margin-top:16px}
-    @media (max-width: 860px){ .grid{grid-template-columns:1fr} }
-    .card{
-      padding:18px; border:1px solid var(--line); border-radius:18px;
-      background:rgba(17,26,51,.70); backdrop-filter: blur(8px);
-    }
-    h2{font-size:16px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin:0 0 10px}
-    ul{margin:0; padding-left:18px}
-    li{margin:8px 0}
-    a{color:var(--link)}
-    .row{display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap}
-    .right{color:var(--muted)}
-    .foot{margin:18px 0 0; color:var(--muted); font-size:14px}
-    .small{font-size:14px;color:var(--muted)}
-    .pill{display:inline-block;padding:4px 10px;border:1px solid var(--line);border-radius:999px;margin:6px 6px 0 0;background:rgba(255,255,255,.04)}
+    main{max-width:860px;margin:56px auto;padding:0 18px}
+    a{color:#111;text-decoration:underline}
+    a:hover{opacity:.75}
+    h1{font-size:34px;margin:0 0 6px;letter-spacing:-.02em}
+    h2{font-size:13px;letter-spacing:.10em;text-transform:uppercase;margin:28px 0 10px}
+    .muted{color:#555}
+    .top{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+    .links{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
+    hr{border:0;border-top:1px solid #e5e7eb;margin:22px 0}
+    ul{margin:0;padding-left:18px}
+    li{margin:6px 0}
+    .row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .block{margin-top:6px}
   </style>
 </head>
 
 <body>
-  <div class="wrap">
+  <main>
     <section class="top">
       <div>
         <h1>Ruihui Xu</h1>
-        <p class="tagline">M.S. Mathematics (Georgia Tech) · Graduate Teaching Assistant · Actuarial Exams (FM, P)</p>
+        <div class="muted">M.S. Mathematics (Georgia Tech) · Graduate Teaching Assistant</div>
 
         <div class="links">
-          <a class="chip" href="mailto:rxu367@gatech.edu">rxu367@gatech.edu</a>
-          <a class="chip" href="https://github.com/ruihuixu2002" target="_blank" rel="noreferrer">GitHub</a>
-          <!-- Optional: add LinkedIn / Google Scholar / CV PDF -->
-          <!-- <a class="chip" href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noreferrer">LinkedIn</a> -->
-          <!-- <a class="chip" href="/resume.pdf" target="_blank" rel="noreferrer">Resume (PDF)</a> -->
+          <a href="mailto:rxu367@gatech.edu">rxu367@gatech.edu</a>
+          <a href="https://github.com/ruihuixu2002" target="_blank" rel="noreferrer">GitHub</a>
         </div>
-
-        <p class="foot">
-          I’m a mathematics graduate student with a background in actuarial science. I’m interested in quantitative methods,
-          teaching, and building practical tools with Python.
-        </p>
       </div>
 
-      <div class="small">
-        <div><strong>Location</strong></div>
-        <div>Atlanta, GA (US)</div>
-        <div style="height:10px"></div>
-        <div><strong>Languages</strong></div>
-        <div>English · Chinese</div>
+      <div class="muted">
+        Atlanta, GA<br/>
+        English · Chinese
       </div>
     </section>
 
-    <section class="grid">
-      <div class="card">
-        <h2>Education</h2>
-        <div class="row">
-          <div><strong>Georgia Institute of Technology</strong> — M.S. Mathematics</div>
-          <div class="right">Aug 2023 – Aug 2025</div>
-        </div>
-        <div class="small">School of Mathematics · Atlanta, GA</div>
+    <hr/>
 
-        <div style="height:12px"></div>
+    <section>
+      <h2>Education</h2>
 
-        <div class="row">
-          <div><strong>Florida State University</strong> — B.S. Actuarial Science; B.S. Mathematics</div>
-          <div class="right">Aug 2021 – Aug 2023</div>
-        </div>
-        <div class="small">Summa Cum Laude · Liberal Studies Honors Program · GPA: 4.0</div>
+      <div class="row">
+        <strong>Georgia Institute of Technology, School of Mathematics</strong>
+        <span class="muted">Atlanta, GA</span>
+      </div>
+      <div class="row block">
+        <span>M.S. in Mathematics</span>
+        <span class="muted">Aug 2023 – Aug 2025</span>
       </div>
 
-      <div class="card">
-        <h2>Experience</h2>
-        <div class="row">
-          <div><strong>Graduate Teaching Assistant</strong> — Georgia Tech</div>
-          <div class="right">Aug 2023 – Present</div>
-        </div>
-        <ul>
-          <li>Department of Mathematics.</li>
-          <li>Replace this bullet with what you actually do: recitations, grading, office hours, course name, etc.</li>
-          <li>Add 1–2 measurable outcomes (e.g., number of students, sections, materials created).</li>
-        </ul>
-      </div>
+      <div style="height:12px"></div>
 
-      <div class="card">
-        <h2>Actuarial Exams</h2>
-        <ul>
-          <li>SOA Exam FM — Passed (Jun 2022)</li>
-          <li>SOA Exam P — Passed (Jul 2022)</li>
-        </ul>
-        <div style="height:10px"></div>
-        <h2>Skills</h2>
-        <div>
-          <span class="pill">Python (basic)</span>
-          <span class="pill">C++ (basic)</span>
-          <span class="pill">Excel</span>
-        </div>
+      <div class="row">
+        <strong>Florida State University, College of Arts and Sciences</strong>
+        <span class="muted">Tallahassee, FL</span>
       </div>
+      <div class="row block">
+        <span>B.S. in Actuarial Science</span>
+        <span class="muted">Aug 2021 – Aug 2023</span>
+      </div>
+      <div class="row block">
+        <span>B.S. in Mathematics</span>
+        <span class="muted">Aug 2021 – Aug 2023</span>
+      </div>
+      <div class="muted block">Honors: Summa Cum Laude, Liberal Studies Honors Program · GPA: 4.0</div>
+    </section>
 
-      <div class="card">
-        <h2>Projects</h2>
-        <ul>
-          <li><a href="https://github.com/ruihuixu2002" target="_blank" rel="noreferrer">GitHub profile</a> — pin your best projects there.</li>
-          <li>Add 2–3 projects with: what it does + tech used + one result.</li>
-        </ul>
+    <section>
+      <h2>Actuarial Exams</h2>
+      <ul>
+        <li>Exam Financial Mathematics (Passed Jun 2022)</li>
+        <li>Exam Probability (Passed Jul 2022)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Employment</h2>
+      <div class="row">
+        <strong>Graduate Teaching Assistant, Georgia Tech</strong>
+        <span class="muted">Atlanta, GA</span>
+      </div>
+      <div class="row block">
+        <span>Department of Mathematics</span>
+        <span class="muted">Aug 2023 – Present</span>
       </div>
     </section>
 
-    <p class="small" style="margin-top:14px">
-      Tip: upload a PDF resume to this repo (e.g., <code>resume.pdf</code>) and enable the “Resume (PDF)” link above.
-    </p>
-  </div>
+    <section>
+      <h2>Technical Skills & Languages</h2>
+      <ul>
+        <li>Languages: Chinese; English</li>
+        <li>Programming: C++ (beginner), Python (beginner)</li>
+        <li>Computer Skills: Excel</li>
+      </ul>
+    </section>
+  </main>
 </body>
 </html>
