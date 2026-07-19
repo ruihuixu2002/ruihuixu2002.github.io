@@ -4,257 +4,318 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ruihui Xu</title>
-  <meta name="description" content="Ruihui Xu personal website." />
+  <meta
+    name="description"
+    content="Ruihui Xu — mathematics, economics, international affairs, teaching, and selected research projects."
+  />
   <style>
+    :root{
+      --ink:#111;
+      --muted:#525252;
+      --rule:#111;
+      --soft-rule:#d4d4d4;
+      --paper:#fff;
+    }
+    *{box-sizing:border-box}
+    html{background:var(--paper)}
     body{
       margin:0;
-      background:#fff;
-      color:#111;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      line-height:1.7;
-      font-size:16px;
-    }
-    main{max-width:860px;margin:56px auto;padding:0 18px}
-
-    a{color:#111;text-decoration:underline}
-    a:hover{opacity:.75}
-
-    h1{font-size:34px;margin:0 0 6px;letter-spacing:-.02em}
-
-    /* Bigger section headers */
-    h2{
-      font-size:16px;
-      letter-spacing:.06em;
-      text-transform:uppercase;
-      margin:30px 0 12px;
-      font-weight:700;
-    }
-    h2.zh{
+      background:var(--paper);
+      color:var(--ink);
+      font-family:"Times New Roman",Times,serif;
       font-size:17px;
-      letter-spacing:0;
-      text-transform:none;
-      font-weight:700;
+      line-height:1.45;
     }
-
-    .muted{color:#555}
-    .top{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
-    .links{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
-    hr{border:0;border-top:1px solid #e5e7eb;margin:22px 0}
-    ul{margin:0;padding-left:18px}
-    li{margin:6px 0}
-    .row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-    .block{margin-top:6px}
-
-    /* language buttons */
-    .langbar{display:flex;justify-content:flex-end;margin-bottom:10px}
-    .langbtns{display:flex;gap:8px}
+    html[data-lang="zh"] body{
+      font-family:"Songti SC","STSong","Noto Serif CJK SC","Times New Roman",serif;
+    }
+    main{
+      width:min(calc(100% - 36px),980px);
+      margin:0 auto;
+      padding:34px 0 64px;
+    }
+    button,a{font:inherit}
+    a{color:inherit;text-underline-offset:3px}
+    a:hover{text-decoration-thickness:2px}
+    .langbar{display:flex;justify-content:flex-end;gap:8px;min-height:34px}
     .btn{
-      border:1px solid #e5e7eb;
-      background:#fff;
-      color:#111;
-      padding:6px 10px;
-      font:inherit;
-      border-radius:10px;
+      border:1px solid var(--soft-rule);
+      border-radius:3px;
+      background:var(--paper);
+      color:var(--ink);
+      padding:5px 11px;
       cursor:pointer;
     }
-    .btn[aria-pressed="true"]{border-color:#111;font-weight:600}
-
-    /* Show/Hide by language */
-    html[data-lang="en"] .zh { display:none; }
-    html[data-lang="zh"] .en { display:none; }
+    .btn:hover,.btn:focus-visible{border-color:var(--ink)}
+    .btn:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+    .btn[aria-pressed="true"]{border-color:var(--ink);font-weight:700}
+    .site-header{padding:8px 0 30px;text-align:center}
+    h1{
+      margin:0;
+      font-size:clamp(2.35rem,7vw,3.2rem);
+      line-height:1.05;
+      letter-spacing:-.025em;
+    }
+    .links{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:9px;
+      margin-top:8px;
+      font-size:1rem;
+    }
+    section{margin-top:28px}
+    h2{
+      margin:0 0 10px;
+      border-bottom:2px solid var(--rule);
+      padding-bottom:2px;
+      font-size:1.2rem;
+      line-height:1.15;
+      letter-spacing:.01em;
+      text-transform:uppercase;
+    }
+    h2.zh{letter-spacing:.08em;text-transform:none}
+    .entry+.entry{margin-top:14px}
+    .row{
+      display:flex;
+      justify-content:space-between;
+      align-items:baseline;
+      gap:22px;
+    }
+    .entry-heading{font-size:1.03rem}
+    .row>:last-child{flex:0 0 auto;text-align:right}
+    .subheading{margin-top:1px}
+    .honors{margin-top:2px}
+    ul{margin:6px 0 0;padding-left:32px}
+    li{padding-left:5px}
+    li+li{margin-top:3px}
+    .project+.project{margin-top:16px}
+    h3{margin:0;font-size:1.02rem;line-height:1.35}
+    dl{margin:0}
+    dl>div{display:flex;gap:5px}
+    dt{flex:0 0 auto;font-weight:700}
+    dd{margin:0}
+    html[data-lang="en"] .zh{display:none}
+    html[data-lang="zh"] .en{display:none}
+    @media(max-width:680px){
+      body{font-size:16px}
+      main{width:min(calc(100% - 28px),980px);padding-top:20px}
+      .site-header{padding-bottom:22px}
+      section{margin-top:24px}
+      .row{display:block}
+      .row>:last-child{
+        display:block;
+        margin-top:1px;
+        color:var(--muted);
+        text-align:left;
+      }
+      .row+.row{margin-top:5px}
+      .honors{margin-top:7px}
+      dl>div{display:block}
+      dl>div+div{margin-top:5px}
+    }
+    @media print{
+      .langbar{display:none}
+      main{width:100%;padding:0}
+      a{text-decoration:none}
+    }
   </style>
 </head>
 
 <body>
   <main>
-    <div class="langbar">
-      <div class="langbtns" role="group" aria-label="Language switch">
-        <button class="btn" id="btn-en" type="button" aria-pressed="true">
-          <span class="en">English</span><span class="zh">英文</span>
-        </button>
-        <button class="btn" id="btn-zh" type="button" aria-pressed="false">
-          <span class="en">Chinese</span><span class="zh">中文</span>
-        </button>
+    <nav class="langbar" aria-label="Language switch">
+      <button class="btn" id="btn-en" type="button" aria-pressed="true">English</button>
+      <button class="btn" id="btn-zh" type="button" aria-pressed="false">中文</button>
+    </nav>
+
+    <header class="site-header">
+      <h1 class="en">Ruihui Xu</h1>
+      <h1 class="zh">许睿辉</h1>
+      <div class="links">
+        <a class="en" href="mailto:rxu367@gatech.edu">Email</a>
+        <a class="zh" href="mailto:rxu367@gatech.edu">邮箱</a>
+        <span aria-hidden="true">|</span>
+        <a href="https://github.com/ruihuixu2002" target="_blank" rel="noreferrer">GitHub</a>
       </div>
-    </div>
+    </header>
 
-    <section class="top">
-      <div>
-        <h1 class="en">Ruihui Xu</h1>
-        <h1 class="zh">许睿辉</h1>
-
-        <div class="links">
-          <a class="en" href="mailto:rxu367@gatech.edu">Email</a>
-          <a class="zh" href="mailto:rxu367@gatech.edu">邮箱</a>
-
-          <a class="en" href="https://github.com/ruihuixu2002" target="_blank" rel="noreferrer">GitHub</a>
-          <a class="zh" href="https://github.com/ruihuixu2002" target="_blank" rel="noreferrer">GitHub</a>
-        </div>
-      </div>
-    </section>
-
-    <hr/>
-
-    <section>
-      <h2 class="en">Education</h2>
-      <h2 class="zh">教育经历</h2>
+    <section aria-labelledby="education-en education-zh">
+      <h2 class="en" id="education-en">Education</h2>
+      <h2 class="zh" id="education-zh">教育经历</h2>
 
       <div class="en">
-        <div class="row">
-          <strong>Georgia Institute of Technology, School of Mathematics</strong>
-          <span class="muted">Atlanta, GA</span>
-        </div>
-        <div class="row block">
-          <span>M.S. in Mathematics</span>
-          <span class="muted">Aug 2023 – Aug 2025</span>
-        </div>
-
-        <div style="height:12px"></div>
-
-        <div class="row">
-          <strong>Florida State University, College of Arts and Sciences</strong>
-          <span class="muted">Tallahassee, FL</span>
-        </div>
-        <div class="row block">
-          <span>B.S. in Actuarial Science</span>
-          <span class="muted">Aug 2021 – Aug 2023</span>
-        </div>
-        <div class="row block">
-          <span>B.S. in Mathematics</span>
-          <span class="muted">Aug 2021 – Aug 2023</span>
-        </div>
-        <div class="muted block">
-          GPA: 4.0<br/>
-          Latin honors: Summa Cum Laude<br/>
-          Liberal Studies Honors Program
-        </div>
+        <article class="entry">
+          <div class="row entry-heading">
+            <strong>Georgia Institute of Technology</strong>
+            <span>Atlanta, GA</span>
+          </div>
+          <div class="row"><span>Mathematics (M.S.)</span><span>August 2023 - August 2025</span></div>
+          <div class="row"><span>International Affairs (M.S.)</span><span>August 2025 - Expected May 2027</span></div>
+          <div class="row"><span>Economics (M.S.)</span><span>May 2026 - Expected May 2027</span></div>
+        </article>
+        <article class="entry">
+          <div class="row entry-heading">
+            <strong>Florida State University, College of Arts and Sciences</strong>
+            <span>Tallahassee, FL</span>
+          </div>
+          <div class="row"><span>Actuarial Science (B.S.)</span><span>August 2021 - August 2023</span></div>
+          <div class="row"><span>Mathematics (B.S.)</span><span>August 2021 - August 2023</span></div>
+          <div class="row honors">
+            <span>Honors: Summa Cum Laude, Liberal Studies Honors Program, President’s List</span>
+            <span>GPA: 4.0</span>
+          </div>
+        </article>
       </div>
 
       <div class="zh">
-        <div class="row">
-          <strong>佐治亚理工学院（数学学院）</strong>
-          <span class="muted">亚特兰大，佐治亚州</span>
-        </div>
-        <div class="row block">
-          <span>数学硕士</span>
-          <span class="muted">2023.08 – 2025.08</span>
-        </div>
-
-        <div style="height:12px"></div>
-
-        <div class="row">
-          <strong>佛罗里达州立大学（文理学院）</strong>
-          <span class="muted">塔拉哈西，佛罗里达州</span>
-        </div>
-        <div class="row block">
-          <span>精算学学士</span>
-          <span class="muted">2021.08 – 2023.08</span>
-        </div>
-        <div class="row block">
-          <span>数学学士</span>
-          <span class="muted">2021.08 – 2023.08</span>
-        </div>
-
-        <div class="muted block">
-          绩点：4.0<br/>
-          拉丁学位荣誉：最优等<br/>
-          博雅教育荣誉项目
-        </div>
+        <article class="entry">
+          <div class="row entry-heading">
+            <strong>佐治亚理工学院</strong>
+            <span>美国佐治亚州亚特兰大</span>
+          </div>
+          <div class="row"><span>数学硕士</span><span>2023.08 - 2025.08</span></div>
+          <div class="row"><span>国际事务硕士</span><span>2025.08 - 预计 2027.05</span></div>
+          <div class="row"><span>经济学硕士</span><span>2026.05 - 预计 2027.05</span></div>
+        </article>
+        <article class="entry">
+          <div class="row entry-heading">
+            <strong>佛罗里达州立大学（文理学院）</strong>
+            <span>美国佛罗里达州塔拉哈西</span>
+          </div>
+          <div class="row"><span>精算学学士</span><span>2021.08 - 2023.08</span></div>
+          <div class="row"><span>数学学士</span><span>2021.08 - 2023.08</span></div>
+          <div class="row honors">
+            <span>荣誉：最优等荣誉毕业、博雅教育荣誉项目、校长荣誉名单</span>
+            <span>绩点：4.0</span>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section>
-      <h2 class="en">Actuarial Exams</h2>
-      <h2 class="zh">精算考试</h2>
-
-      <ul class="en">
-        <li>SOA Exam FM — Passed (Jun 2022)</li>
-        <li>SOA Exam P — Passed (Jul 2022)</li>
-      </ul>
-
-      <ul class="zh">
-        <li>北美精算师协会（SOA）FM（金融数学），2022年6月通过</li>
-        <li>北美精算师协会（SOA）P（概率论），2022年7月通过</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2 class="en">Employment</h2>
-      <h2 class="zh">工作经历</h2>
+    <section aria-labelledby="employment-en employment-zh">
+      <h2 class="en" id="employment-en">Employment</h2>
+      <h2 class="zh" id="employment-zh">工作经历</h2>
 
       <div class="en">
-        <div class="row">
-          <strong>Graduate Teaching Assistant, Georgia Tech</strong>
-          <span class="muted">Atlanta, GA</span>
-        </div>
-        <div class="row block">
-          <span>Department of Mathematics</span>
-          <span class="muted">Aug 2023 – Present</span>
-        </div>
+        <article class="entry">
+          <div class="row entry-heading"><strong>Graduate Teaching Assistant, Georgia Tech</strong><span>Atlanta, GA</span></div>
+          <div class="row subheading"><em>School of Mathematics</em><span>August 2023 - Present</span></div>
+          <ul>
+            <li>Taught four class sessions per week for undergraduate mathematics courses, including Calculus, Multivariable Calculus, Linear Algebra, and Differential Equations.</li>
+            <li>Led discussion sections and guided students through mathematical concepts and problem-solving.</li>
+            <li>Graded homework, quizzes, and exams and provided constructive feedback to support student learning.</li>
+          </ul>
+        </article>
+        <article class="entry">
+          <div class="row entry-heading"><strong>Head Teaching Assistant, Georgia Tech</strong><span>Atlanta, GA</span></div>
+          <div class="row subheading"><em>School of Mathematics</em><span>August 2025 - December 2025</span></div>
+          <ul>
+            <li>Led and coordinated a team of 16 teaching assistants for MATH 1551 (Differential Calculus), supporting instruction for more than 600 students.</li>
+            <li>Managed course support activities including discussion posts, grading coordination, and instructional assistance.</li>
+            <li>Ensured consistent grading standards across homework, quizzes, and exams while supporting student learning through feedback.</li>
+          </ul>
+        </article>
       </div>
 
       <div class="zh">
-        <div class="row">
-          <strong>研究生助教（佐治亚理工学院）</strong>
-          <span class="muted">亚特兰大，佐治亚州</span>
-        </div>
-        <div class="row block">
-          <span>数学系</span>
-          <span class="muted">2023.08 – 至今</span>
-        </div>
+        <article class="entry">
+          <div class="row entry-heading"><strong>研究生助教，佐治亚理工学院</strong><span>美国佐治亚州亚特兰大</span></div>
+          <div class="row subheading"><em>数学学院</em><span>2023.08 - 至今</span></div>
+          <ul>
+            <li>每周为本科数学课程授课四节，涵盖微积分、多元微积分、线性代数和微分方程。</li>
+            <li>主持习题讨论课，帮助学生理解数学概念并掌握解题方法。</li>
+            <li>批改作业、测验和考试，并通过建设性反馈支持学生学习。</li>
+          </ul>
+        </article>
+        <article class="entry">
+          <div class="row entry-heading"><strong>助教负责人，佐治亚理工学院</strong><span>美国佐治亚州亚特兰大</span></div>
+          <div class="row subheading"><em>数学学院</em><span>2025.08 - 2025.12</span></div>
+          <ul>
+            <li>领导并协调 MATH 1551（微分微积分）的 16 人助教团队，为 600 多名学生提供教学支持。</li>
+            <li>管理课程讨论区、评分协调和教学协助等课程支持工作。</li>
+            <li>确保作业、测验和考试采用一致的评分标准，并通过反馈支持学生学习。</li>
+          </ul>
+        </article>
       </div>
     </section>
 
-    <section>
-      <h2 class="en">Skills & Languages</h2>
-      <h2 class="zh">技能与语言</h2>
+    <section aria-labelledby="projects-en projects-zh">
+      <h2 class="en" id="projects-en">Selected Projects and Papers</h2>
+      <h2 class="zh" id="projects-zh">精选项目与论文</h2>
 
-      <ul class="en">
-        <li>Languages: English; Chinese</li>
-        <li>Programming: C++, Python</li>
-        <li>Tools: Excel</li>
-      </ul>
+      <div class="en">
+        <article class="project">
+          <h3>Bayesian Optimization under Prior Misspecification: A Gaussian Process UCB Study</h3>
+          <ul><li>Examined how misspecified Gaussian-process variance and length scale affect UCB’s ability to identify the global maximum of a nonconvex objective, distinguishing premature exploitation, excessive exploration, and oversmoothing as failure modes.</li></ul>
+        </article>
+        <article class="project">
+          <h3>Beyond Automation: Assessing Machine Learning as a Revolution in Military Affairs</h3>
+          <ul><li>Assessed whether machine learning constitutes an emerging Revolution in Military Affairs, arguing that it is technologically distinct from rule-based automation but has not yet transformed military doctrine and organization at scale.</li></ul>
+        </article>
+        <article class="project">
+          <h3>Why Have China’s Post-2021 Fertility-Support Policies Failed to Produce a Sustained Increase in the Birth Rate?</h3>
+          <ul><li>Used process tracing to compare implementation gaps with small-family norms, concluding that uneven local delivery and persistent household costs were the primary reasons China’s fertility-support policies failed to produce a sustained increase in births.</li></ul>
+        </article>
+      </div>
 
-      <ul class="zh">
-        <li>语言：英语、中文</li>
-        <li>编程：C++，Python</li>
-        <li>工具：Excel</li>
-      </ul>
+      <div class="zh">
+        <article class="project">
+          <h3>先验设定错误下的贝叶斯优化：高斯过程 UCB 研究</h3>
+          <ul><li>研究高斯过程的方差与长度尺度设定错误如何影响 UCB 在非凸目标中识别全局最大值，并区分过早利用、过度探索和过度平滑三类失效模式。</li></ul>
+        </article>
+        <article class="project">
+          <h3>超越自动化：机器学习是否构成军事事务革命</h3>
+          <ul><li>评估机器学习是否正在推动新一轮军事事务革命；认为其在技术上不同于基于规则的自动化，但尚未在大规模层面改变军事条令与组织。</li></ul>
+        </article>
+        <article class="project">
+          <h3>为什么中国 2021 年后的生育支持政策未能持续提高出生率？</h3>
+          <ul><li>通过过程追踪比较政策执行缺口与小家庭规范，认为地方落实不均和家庭持续承担的成本是政策未能持续提高出生率的主要原因。</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="additional-en additional-zh">
+      <h2 class="en" id="additional-en">Additional Information</h2>
+      <h2 class="zh" id="additional-zh">其他信息</h2>
+      <dl class="en">
+        <div><dt>Languages:</dt><dd>Chinese (Native), English (Fluent)</dd></div>
+        <div><dt>Technical Skills:</dt><dd>Python (NumPy, pandas, scikit-learn), C++, R, LaTeX, Excel</dd></div>
+        <div><dt>Actuarial Exams:</dt><dd>SOA Exam P (Probability), SOA Exam FM (Financial Mathematics)</dd></div>
+      </dl>
+      <dl class="zh">
+        <div><dt>语言：</dt><dd>中文（母语）、英语（流利）</dd></div>
+        <div><dt>技术技能：</dt><dd>Python（NumPy、pandas、scikit-learn）、C++、R、LaTeX、Excel</dd></div>
+        <div><dt>精算考试：</dt><dd>北美精算师协会 Exam P（概率论）、Exam FM（金融数学）</dd></div>
+      </dl>
     </section>
   </main>
 
   <script>
-    (function () {
-      const html = document.documentElement;
-      const btnEn = document.getElementById("btn-en");
-      const btnZh = document.getElementById("btn-zh");
+    (function(){
+      const html=document.documentElement;
+      const btnEn=document.getElementById("btn-en");
+      const btnZh=document.getElementById("btn-zh");
 
-      function setPressed(lang) {
-        btnEn.setAttribute("aria-pressed", lang === "en" ? "true" : "false");
-        btnZh.setAttribute("aria-pressed", lang === "zh" ? "true" : "false");
+      function setLang(lang){
+        const safe=lang==="zh"?"zh":"en";
+        html.setAttribute("data-lang",safe);
+        html.setAttribute("lang",safe==="zh"?"zh-CN":"en");
+        btnEn.setAttribute("aria-pressed",safe==="en"?"true":"false");
+        btnZh.setAttribute("aria-pressed",safe==="zh"?"true":"false");
+        try{localStorage.setItem("site_lang",safe)}catch(e){}
       }
 
-      function setLang(lang) {
-        const safe = (lang === "zh") ? "zh" : "en";
-        html.setAttribute("data-lang", safe);
-        html.setAttribute("lang", safe === "zh" ? "zh-CN" : "en");
-        setPressed(safe);
-        try { localStorage.setItem("site_lang", safe); } catch (e) {}
+      function detectDefault(){
+        try{
+          const saved=localStorage.getItem("site_lang");
+          if(saved==="en"||saved==="zh")return saved;
+        }catch(e){}
+        return(navigator.language||"").toLowerCase().startsWith("zh")?"zh":"en";
       }
 
-      function detectDefault() {
-        try {
-          const saved = localStorage.getItem("site_lang");
-          if (saved === "en" || saved === "zh") return saved;
-        } catch (e) {}
-
-        const nav = (navigator.language || "").toLowerCase();
-        return nav.startsWith("zh") ? "zh" : "en";
-      }
-
-      btnEn.addEventListener("click", () => setLang("en"));
-      btnZh.addEventListener("click", () => setLang("zh"));
-
+      btnEn.addEventListener("click",function(){setLang("en")});
+      btnZh.addEventListener("click",function(){setLang("zh")});
       setLang(detectDefault());
     })();
   </script>
